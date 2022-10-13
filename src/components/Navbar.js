@@ -1,4 +1,4 @@
-import { Box, Switch, Tab, Tabs, Typography } from "@mui/material";
+import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { Home, School, Work, Assignment } from "@mui/icons-material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -68,7 +68,6 @@ export default function Navbar() {
           to={navs[3]}
         />
       </Tabs>
-      <Switch></Switch>
     </Box>
   );
 }
