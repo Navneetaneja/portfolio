@@ -13,6 +13,7 @@ export default function App() {
         <Route path="/education" />
         <Route path="/experience" />
         <Route path="/projects" />
+        <Route path="/page-not-found" element={<Error />} />
         <Route path="/*" element={<Error />} />
       </Routes>
       <Footer />
