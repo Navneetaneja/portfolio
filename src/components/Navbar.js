@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   const navs = ["/", "/education", "/experience", "/projects"];
   let index = navs.indexOf(window.location.pathname);
+  if (index === -1) {
+    index = 0;
+    window.location.pathname = "/";
+  }
   const [value, setValue] = useState(index);
   const handleValue = (_event, newValue) => {
     setValue(newValue);
