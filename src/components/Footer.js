@@ -68,6 +68,7 @@ export default function Footer() {
       !emailError
     ) {
       setSeverity("success");
+      send();
       setText("Message Sent Successfully");
     } else if (checkEmpty(name) || checkEmpty(email) || checkEmpty(message)) {
       setSeverity("error");
@@ -85,6 +86,20 @@ export default function Footer() {
     }
     setOpen(true);
   };
+
+  const send = ()=>{
+    fetch("https://navneet-aneja-portfolio.herokuapp.com/send-email", {
+      headers:{
+        'Content-Type':'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      method: 'post',
+      body: JSON.stringify({name:name,email:email,message:message})
+    })
+    .catch(function(err){
+        console.log(err);
+    })
+  }
 
   return (
     <Box
