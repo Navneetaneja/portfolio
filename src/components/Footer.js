@@ -58,7 +58,7 @@ export default function Footer() {
     return prop === null || prop === undefined || prop === "";
   };
 
-  const sendMessage = (_event) => {
+  const sendMessage = async (_event) => {
     if (
       !checkEmpty(name) &&
       !checkEmpty(email) &&
@@ -67,9 +67,15 @@ export default function Footer() {
       !nameError &&
       !emailError
     ) {
-      setSeverity("success");
-      send();
-      setText("Message Sent Successfully");
+      const res = await send();
+      // console.log(res);
+      if (res === 200) {
+        setSeverity("success");
+        setText("Message Sent Successfully");
+      } else {
+        setSeverity("error");
+        setText("Error Occurred");
+      }
     } else if (checkEmpty(name) || checkEmpty(email) || checkEmpty(message)) {
       setSeverity("error");
       setText("Fields Cannot be Empty");
@@ -87,19 +93,22 @@ export default function Footer() {
     setOpen(true);
   };
 
-  const send = ()=>{
-    fetch("https://navneet-aneja-portfolio.herokuapp.com/send-email", {
-      headers:{
-        'Content-Type':'application/json',
-        'Access-Control-Allow-Origin': '*'
+  const send = () => {
+    return fetch("https://navneet-aneja-portfolio.herokuapp.com/send-email", {
+      headers: {
+        "Content-Type": "application/json",
       },
-      method: 'post',
-      body: JSON.stringify({name:name,email:email,message:message})
+      method: "post",
+      body: JSON.stringify({ name: name, email: email, message: message }),
     })
-    .catch(function(err){
+      .then((res) => {
+        return 200;
+      })
+      .catch(function (err) {
         console.log(err);
-    })
-  }
+        return 500;
+      });
+  };
 
   return (
     <Box
