@@ -24,7 +24,7 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: 5,
+        boxShadow: 5
       }}
     >
       <Typography
@@ -44,6 +44,7 @@ export default function Navbar() {
         allowScrollButtonsMobile
       >
         <Tab
+          className="tab"
           icon={<Home />}
           iconPosition="start"
           label="home"

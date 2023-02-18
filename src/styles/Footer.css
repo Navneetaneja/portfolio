@@ -1,0 +1,25 @@
+@media screen and (max-width: 700px) {
+    .footer{
+        flex-direction: column;
+        overflow: scroll;
+    }
+
+    .footer::-webkit-scrollbar{
+        display: none;
+    }
+
+    .footer img {
+        width: 90%;
+        margin: 5% auto;
+    }
+
+    .touch{
+        width: 100%;
+        margin: 5% auto;
+    }
+
+    .textfield{
+        width: 100%;
+    }
+    
+}

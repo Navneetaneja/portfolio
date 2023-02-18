@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useState } from "react";
+import "../styles/Footer.css";
 
 export default function Footer() {
   const [name, setName] = useState();
@@ -115,23 +116,21 @@ export default function Footer() {
       height="90vh"
       sx={{
         display: "flex",
-        justifyContent: "space-between",
-        background: "black",
-        overflow: "hidden",
+        background: "black"
       }}
+      className="footer"
     >
-      <img height="100%" width="50%" alt="Footer" src="/static/Contact.svg" />
+      <img width="50%" alt="Footer" src="/static/Contact.svg" />
       <Box
-        height="100%"
-        width="50%"
+      width="50%"
         sx={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          color: "white",
-          pt: 5,
-          pb: 5,
+          justifyContent: "center",
+          color: "white"
         }}
+        className="touch"
       >
         <Typography
           variant="h4"
@@ -147,13 +146,13 @@ export default function Footer() {
           placeholder="Enter Your Name"
           sx={{
             mb: 2,
-            width: "50%",
             borderBottom: `${!nameError ? "0.3rem solid purple" : null}`,
             label: { color: "white" },
             input: { color: "white" },
           }}
           variant="standard"
           label={nameLabel}
+          className="textfield"
         />
         <TextField
           helperText={emailHelper}
@@ -163,13 +162,13 @@ export default function Footer() {
           placeholder="Enter Your Email"
           sx={{
             mb: 2,
-            width: "50%",
             borderBottom: `${!emailError ? "0.3rem solid purple" : null}`,
             label: { color: "white" },
             input: { color: "white" },
           }}
           variant="standard"
           label={emailLabel}
+          className="textfield"
         />
         <TextField
           onChange={(e) => {
@@ -179,13 +178,13 @@ export default function Footer() {
           placeholder="Enter Your Message"
           sx={{
             mb: 4,
-            width: "50%",
             borderBottom: "0.3rem solid purple",
             label: { color: "white" },
             input: { color: "white" },
           }}
           variant="standard"
           label="Enter Your Message"
+          className="textfield"
         />
         <Button
           type="submit"

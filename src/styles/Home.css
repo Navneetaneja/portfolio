@@ -1,0 +1,30 @@
+.skills-sq{
+    border-radius: 10%;
+}
+
+/* @media screen and (max-width: 900px){
+    .home{
+        flex-direction: column;
+       height: "100vh";
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .home::-webkit-scrollbar{
+        display: none;
+    }
+    .left-home{
+        width: 200%;
+        height: 90;
+        background-color: aqua;
+    }
+    .mid-home{
+        width: 100%;
+        margin: auto;
+        height: 70vh;
+    }
+    .right-home{
+        width: 80%;
+        height: 90vh;
+        margin: 1rem auto;
+    } */
+/* } */
