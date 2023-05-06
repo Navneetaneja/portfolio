@@ -2,6 +2,7 @@ import { Box, Tab, Tabs, Typography } from "@mui/material";
 import { Home, School, Work, Assignment } from "@mui/icons-material";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import data from "../apis/navbar.json";
 
 export default function Navbar() {
   const navs = ["/", "/education", "/experience", "/projects"];
@@ -15,6 +16,21 @@ export default function Navbar() {
     setValue(newValue);
   };
 
+  const handleIcons = (prop) =>{
+    switch(prop){
+      case "<Home />":
+      return <Home />;
+      case "<School />":
+        return <School />;
+      case "<Work />":
+        return <Work />;
+      case "<Assignment />":
+        return <Assignment />;    
+      default: 
+      return <Home/>;
+    }
+  }
+
   return (
     <Box
       sx={{
@@ -24,7 +40,7 @@ export default function Navbar() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        boxShadow: 5
+        boxShadow: 5,
       }}
     >
       <Typography
@@ -35,7 +51,7 @@ export default function Navbar() {
           fontStyle: "italic",
         }}
       >
-        Navneet Aneja
+        {data.name}
       </Typography>
       <Tabs
         value={value}
@@ -43,35 +59,18 @@ export default function Navbar() {
         variant="scrollable"
         allowScrollButtonsMobile
       >
-        <Tab
-          className="tab"
-          icon={<Home />}
-          iconPosition="start"
-          label="home"
-          LinkComponent={Link}
-          to={navs[0]}
-        />
-        <Tab
-          icon={<School />}
-          iconPosition="start"
-          label="education"
-          LinkComponent={Link}
-          to={navs[1]}
-        />
-        <Tab
-          icon={<Work />}
-          iconPosition="start"
-          label="experience"
-          LinkComponent={Link}
-          to={navs[2]}
-        />
-        <Tab
-          icon={<Assignment />}
-          iconPosition="start"
-          label="projects"
-          LinkComponent={Link}
-          to={navs[3]}
-        />
+        {data.tabs.map((tab, i) => {
+          return (
+            <Tab
+              key = {i}
+              icon={handleIcons(tab.icon)}
+              iconPosition="start"
+              label={tab.label}
+              LinkComponent={Link}
+              to={tab.linkTo}
+            />
+          );
+        })}
       </Tabs>
     </Box>
   );

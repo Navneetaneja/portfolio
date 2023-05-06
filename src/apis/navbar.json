@@ -1,0 +1,25 @@
+{
+  "name": "Navneet Aneja",
+  "tabs": [
+    {
+      "icon": "<Home />",
+      "label": "home",
+      "linkTo": "/"
+    },
+    {
+      "icon": "<School />",
+      "label": "education",
+      "linkTo": "/education"
+    },
+    {
+      "icon": "<Work />",
+      "label": "experience",
+      "linkTo": "/experience"
+    },
+    {
+      "icon": "<Assignment />",
+      "label": "projects",
+      "linkTo": "/projects"
+    }
+  ]
+}

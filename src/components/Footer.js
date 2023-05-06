@@ -113,7 +113,6 @@ export default function Footer() {
 
   return (
     <Box
-      height="90vh"
       sx={{
         display: "flex",
         background: "black"

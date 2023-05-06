@@ -1,0 +1,50 @@
+[
+  {
+    "src": "/static/html.png",
+    "alt": "html"
+  },
+  {
+    "src": "/static/css.png",
+    "alt": "css"
+  },
+  {
+    "src": "/static/js.png",
+    "alt": "javascript"
+  },
+  {
+    "src": "/static/react.png",
+    "alt": "react"
+  },
+  {
+    "src": "/static/node.png",
+    "alt": "node"
+  },
+  {
+    "src": "/static/mongo.png",
+    "alt": "mongodb"
+  },
+  {
+    "src": "/static/c.cms",
+    "alt": "c language"
+  },
+  {
+    "src": "/static/cplus.png",
+    "alt": "C++"
+  },
+  {
+    "src": "/static/java.png",
+    "alt": "java"
+  },
+  {
+    "src": "/static/spring.jpeg",
+    "alt": "spring boot"
+  },
+  {
+    "src": "/static/postgres.png",
+    "alt": "postgreSql"
+  },
+  {
+    "src": "/static/sql.webp",
+    "alt": "SQL"
+  }
+]
